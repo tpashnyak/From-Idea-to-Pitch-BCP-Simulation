@@ -1,0 +1,1024 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="AP Business with Personal Finance: walk through a sample Business Canvas Project and pitch, then build your own problem, solution, business idea, and pitch.">
+<title>From Idea to Pitch</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<style>
+html{color-scheme:light}
+body{margin:0}
+img{max-width:100%}
+[hidden]{display:none!important}
+/* Layout: navy masthead with two tabs; Part 1 = story panel + sticky Business Canvas Project board; Part 2 = stepper workbook. Midnight Executive palette with BCP component tints. */
+:root{
+  --bg:#f4f6fb; --surface:#ffffff; --surface-2:#eef1f8; --ink:#14213d; --muted:#55607a; --line:#d7dce8;
+  --gold:#c99a2e; --gold-ink:#8a6512; --gold-soft:#f7ecd2;
+  --mast:#14213d; --mast-ink:#f3f5fb; --mast-muted:#b9c2da;
+  --good:#2b7a4b; --good-soft:#dff2e6; --warn:#9a4512; --warn-soft:#fbe7d9;
+  --org:#f6dcef; --org-e:#a8418a; --ops:#d6eefa; --ops-e:#1d7fae;
+  --cus:#fcf1c2; --cus-e:#735a00; --pro:#fde2c6; --pro-e:#bb6115;
+  --mkt:#e5dcf3; --mkt-e:#6a4ea6; --fin:#dbeed5; --fin-e:#3a8538;
+  --on-ink-accent:#e2b552;
+  --f-display:"Playfair Display", Georgia, "Times New Roman", serif;
+  --f-body:"IBM Plex Sans", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --f-mono:"IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+  --r:10px;
+}
+@media (prefers-color-scheme: dark){ :root:not([data-theme="light"]){
+  --bg:#0a1326; --surface:#111d36; --surface-2:#172645; --ink:#e7ebf5; --muted:#9ba7c3; --line:#26365a;
+  --gold:#e2b552; --gold-ink:#f0c96a; --gold-soft:#2f2914;
+  --mast:#060d1c; --mast-ink:#f3f5fb; --mast-muted:#9ba7c3;
+  --good:#6fcf97; --good-soft:#143323; --warn:#f2a65a; --warn-soft:#3a2414;
+  --org:#38203d; --org-e:#e08ac6; --ops:#11324a; --ops-e:#63bfe8;
+  --cus:#37310f; --cus-e:#e6c64a; --pro:#3d2817; --pro-e:#f0a361;
+  --mkt:#2b2445; --mkt-e:#b39cf0; --fin:#1b3822; --fin-e:#82cf7e;
+  --on-ink-accent:#6b4e0a;
+  color-scheme:dark; }}
+:root[data-theme="dark"]{
+  --bg:#0a1326; --surface:#111d36; --surface-2:#172645; --ink:#e7ebf5; --muted:#9ba7c3; --line:#26365a;
+  --gold:#e2b552; --gold-ink:#f0c96a; --gold-soft:#2f2914;
+  --mast:#060d1c; --mast-ink:#f3f5fb; --mast-muted:#9ba7c3;
+  --good:#6fcf97; --good-soft:#143323; --warn:#f2a65a; --warn-soft:#3a2414;
+  --org:#38203d; --org-e:#e08ac6; --ops:#11324a; --ops-e:#63bfe8;
+  --cus:#37310f; --cus-e:#e6c64a; --pro:#3d2817; --pro-e:#f0a361;
+  --mkt:#2b2445; --mkt-e:#b39cf0; --fin:#1b3822; --fin-e:#82cf7e;
+  --on-ink-accent:#6b4e0a;
+  color-scheme:dark; }
+
+*{box-sizing:border-box}
+html,body{background:var(--bg)}
+body{color:var(--ink); font-family:var(--f-body); font-size:16px; line-height:1.55}
+body::before{content:""; position:fixed; inset:0 0 auto; height:env(safe-area-inset-top,0px); z-index:10; background:var(--mast)}
+h1,h2,h3{font-family:var(--f-display); text-wrap:balance; line-height:1.15; margin:0}
+h2{font-size:clamp(1.6rem,3.2vw,2.15rem)}
+h3{font-size:1.2rem}
+p{margin:0}
+a{color:var(--gold-ink)}
+button{font:inherit; cursor:pointer}
+:focus-visible{outline:3px solid var(--gold); outline-offset:2px}
+.mono{font-family:var(--f-mono)}
+.wrap{max-width:1180px; margin:0 auto; padding-left:max(16px,env(safe-area-inset-left,0px)); padding-right:max(16px,env(safe-area-inset-right,0px))}
+
+/* masthead */
+.mast{background:var(--mast); color:var(--mast-ink); position:sticky; top:env(safe-area-inset-top,0px); z-index:5; border-bottom:3px solid var(--gold)}
+.mast .wrap{display:flex; flex-wrap:wrap; align-items:center; gap:10px 24px; padding-block:12px}
+@media (max-width:700px){ .mast{position:static} }
+.brand{display:flex; flex-direction:column; min-width:0; margin-right:auto}
+.brand .eyebrow{font-family:var(--f-mono); font-size:.7rem; letter-spacing:.12em; text-transform:uppercase; color:var(--gold)}
+.brand .name{font-family:var(--f-display); font-size:1.35rem; font-weight:700; margin:0; line-height:1.2}
+.tabs{display:flex; gap:6px; flex-wrap:wrap}
+.tab{background:transparent; color:var(--mast-muted); border:1px solid #33456e; border-radius:999px; padding:7px 14px; font-size:.9rem; font-weight:600}
+.tab[aria-selected="true"]{background:var(--gold); color:#14213d; border-color:var(--gold)}
+.tab .n{font-family:var(--f-mono); font-size:.75rem; margin-right:6px}
+
+/* progress rail */
+.rail{display:flex; gap:4px; overflow-x:auto; padding-block:14px 4px; scrollbar-width:thin}
+.rail button{flex:1 0 auto; min-width:92px; background:var(--surface); border:1px solid var(--line); color:var(--muted); border-radius:8px; padding:6px 8px; font-size:.76rem; text-align:left; line-height:1.25}
+.rail button .k{display:block; font-family:var(--f-mono); font-size:.66rem; letter-spacing:.06em; text-transform:uppercase; color:var(--muted)}
+.rail button.done{border-color:var(--good); color:var(--ink)}
+.rail button.done .k::after{content:" ✓"; color:var(--good)}
+.rail button.cur{background:var(--ink); color:var(--bg); border-color:var(--ink)}
+.rail button.cur .k{color:var(--on-ink-accent)}
+
+/* part 1 layout */
+.p1{display:grid; grid-template-columns:minmax(0,1fr) 380px; gap:28px; padding-block:18px 48px; align-items:start}
+@media (max-width:960px){ .p1{grid-template-columns:minmax(0,1fr)} .board-col{order:-1} }
+.stop{background:var(--surface); border:1px solid var(--line); border-radius:14px; padding:clamp(18px,3vw,32px); display:flex; flex-direction:column; gap:18px; min-width:0}
+.stop-head{display:flex; flex-direction:column; gap:8px}
+.chips{display:flex; flex-wrap:wrap; gap:6px}
+.chip{font-family:var(--f-mono); font-size:.7rem; letter-spacing:.06em; text-transform:uppercase; padding:3px 8px; border-radius:999px; background:var(--surface-2); color:var(--muted); border:1px solid var(--line)}
+.chip.c-org{background:var(--org); color:var(--org-e); border-color:transparent}
+.chip.c-ops{background:var(--ops); color:var(--ops-e); border-color:transparent}
+.chip.c-cus{background:var(--cus); color:var(--cus-e); border-color:transparent}
+.chip.c-pro{background:var(--pro); color:var(--pro-e); border-color:transparent}
+.chip.c-mkt{background:var(--mkt); color:var(--mkt-e); border-color:transparent}
+.chip.c-fin{background:var(--fin); color:var(--fin-e); border-color:transparent}
+.chip.c-app{background:var(--gold-soft); color:var(--gold-ink); border-color:transparent}
+.lede{font-size:1.06rem; color:var(--ink); max-width:68ch}
+.muted{color:var(--muted)}
+.small{font-size:.88rem}
+
+.deliv{display:flex; flex-direction:column; gap:12px}
+.dv{border:1px solid var(--line); border-radius:var(--r); padding:14px 16px; display:flex; flex-direction:column; gap:8px; background:var(--surface)}
+.dv-t{display:flex; flex-wrap:wrap; align-items:baseline; gap:6px 10px}
+.dv-t b{font-size:.98rem}
+.star{font-family:var(--f-mono); font-size:.66rem; letter-spacing:.06em; text-transform:uppercase; color:var(--gold-ink); background:var(--gold-soft); padding:2px 7px; border-radius:4px}
+.dv ul{margin:0; padding-left:1.1em; display:flex; flex-direction:column; gap:3px}
+.test{display:grid; grid-template-columns:auto minmax(0,1fr); gap:4px 12px; background:var(--surface-2); border-radius:8px; padding:10px 12px; font-size:.9rem}
+.test dt{font-family:var(--f-mono); font-size:.7rem; letter-spacing:.06em; text-transform:uppercase; color:var(--muted); padding-top:3px}
+.test dd{margin:0}
+.verdict{color:var(--good); font-weight:600}
+.pivot{color:var(--warn); font-weight:600}
+
+.callout{border-left:4px solid var(--gold); background:var(--gold-soft); padding:12px 14px; border-radius:0 8px 8px 0; font-size:.95rem}
+.two{display:grid; grid-template-columns:repeat(auto-fit,minmax(230px,1fr)); gap:12px}
+.qbox{border-radius:8px; padding:10px 12px; font-size:.9rem}
+.qbox.good{background:var(--good-soft)} .qbox.bad{background:var(--warn-soft)}
+.qbox .lbl{font-family:var(--f-mono); font-size:.7rem; letter-spacing:.06em; text-transform:uppercase; display:block; margin-bottom:4px}
+.qbox.good .lbl{color:var(--good)} .qbox.bad .lbl{color:var(--warn)}
+
+.tbl-wrap{overflow-x:auto}
+table{border-collapse:collapse; width:100%; font-size:.9rem; font-variant-numeric:tabular-nums}
+th,td{padding:7px 10px; border-bottom:1px solid var(--line); text-align:left; vertical-align:top}
+th{font-family:var(--f-mono); font-size:.7rem; letter-spacing:.06em; text-transform:uppercase; color:var(--muted); font-weight:500}
+td.num,th.num{text-align:right}
+tr.win td{background:var(--good-soft); font-weight:600}
+tr.total td{font-weight:700; border-top:2px solid var(--ink)}
+tr.sub td{font-weight:600}
+
+/* spark */
+.spark{display:grid; grid-template-columns:minmax(0,1.1fr) minmax(0,1fr); gap:20px; align-items:center}
+@media (max-width:700px){.spark{grid-template-columns:minmax(0,1fr)}}
+.spark video{width:100%; max-width:100%; border-radius:10px; background:#000; aspect-ratio:16/9}
+.quote{font-family:var(--f-display); font-size:1.3rem; line-height:1.35; font-style:italic}
+.formula{display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:8px}
+@media (max-width:560px){.formula{grid-template-columns:minmax(0,1fr)}}
+.formula div{border:1px solid var(--line); border-radius:8px; padding:10px; background:var(--surface-2)}
+.formula .k{font-family:var(--f-mono); font-size:.68rem; letter-spacing:.08em; text-transform:uppercase; color:var(--gold-ink); display:block}
+
+/* check question */
+.check{border:2px solid var(--ink); border-radius:12px; padding:16px; display:flex; flex-direction:column; gap:10px}
+.check .k{font-family:var(--f-mono); font-size:.7rem; letter-spacing:.1em; text-transform:uppercase; color:var(--gold-ink)}
+.opts{display:flex; flex-direction:column; gap:8px}
+.opt{display:flex; gap:10px; align-items:flex-start; text-align:left; background:var(--surface); border:1px solid var(--line); border-radius:8px; padding:10px 12px; color:var(--ink)}
+.opt .L{font-family:var(--f-mono); font-weight:600; min-width:1.4em}
+.opt:hover{border-color:var(--ink)}
+.opt.right{background:var(--good-soft); border-color:var(--good)}
+.opt.wrong{background:var(--warn-soft); border-color:var(--warn)}
+.fb{font-size:.92rem; padding:10px 12px; border-radius:8px; background:var(--surface-2)}
+.fb b{display:block}
+
+.nav{display:flex; justify-content:space-between; gap:10px; flex-wrap:wrap}
+.btn{border:1px solid var(--ink); background:var(--surface); color:var(--ink); border-radius:8px; padding:10px 16px; font-weight:600}
+.btn.primary{background:var(--ink); color:var(--bg)}
+.btn.gold{background:var(--gold); border-color:var(--gold); color:#14213d}
+.btn:disabled{opacity:.4; cursor:default}
+
+/* board */
+.board-col{position:sticky; top:calc(env(safe-area-inset-top,0px) + 92px); display:flex; flex-direction:column; gap:8px}
+@media (max-width:960px){.board-col{position:static}}
+.board-title{display:flex; justify-content:space-between; align-items:baseline; gap:8px}
+.board-title b{font-family:var(--f-display); font-size:1.05rem}
+.board{display:grid; grid-template-columns:repeat(6,minmax(0,1fr)); border:2px solid var(--ink); border-radius:8px; overflow:hidden; background:var(--surface)}
+.cell{border:0; border-right:1px solid var(--line); border-bottom:1px solid var(--line); background:var(--surface); color:var(--ink); padding:8px; min-height:82px; text-align:left; display:flex; flex-direction:column; gap:4px; position:relative; transition:background .25s}
+.cell .nm{font-weight:700; font-size:.8rem; display:flex; justify-content:space-between; gap:4px}
+.cell .st{font-family:var(--f-mono); font-size:.64rem; color:var(--muted); letter-spacing:.04em}
+.cell.c-org{grid-column:span 3} .cell.c-ops{grid-column:span 3}
+.cell.c-cus,.cell.c-pro,.cell.c-mkt{grid-column:span 2; min-height:110px}
+.cell.c-fin{grid-column:span 6; min-height:64px}
+.cell.filled.c-org{background:var(--org)} .cell.filled.c-ops{background:var(--ops)} .cell.filled.c-cus{background:var(--cus)}
+.cell.filled.c-pro{background:var(--pro)} .cell.filled.c-mkt{background:var(--mkt)} .cell.filled.c-fin{background:var(--fin)}
+.cell.filled .st{color:var(--ink)}
+.cell.now{box-shadow:inset 0 0 0 3px var(--gold)}
+.board-note{font-size:.78rem; color:var(--muted)}
+.app-strip{display:flex; gap:6px}
+.app-strip span{flex:1; font-family:var(--f-mono); font-size:.66rem; letter-spacing:.04em; text-transform:uppercase; text-align:center; padding:6px 4px; border:1px dashed var(--line); border-radius:6px; color:var(--muted)}
+.app-strip span.filled{background:var(--gold-soft); border:1px solid var(--gold); color:var(--gold-ink)}
+
+/* full canvas */
+.full{display:grid; grid-template-columns:repeat(6,minmax(0,1fr)); border:2px solid var(--ink); border-radius:10px; overflow:hidden}
+.full > section{padding:12px 14px; border-right:1px solid var(--line); border-bottom:1px solid var(--line); min-width:0; font-size:.84rem; line-height:1.45}
+.full > section h3{margin:0 0 6px; font-family:var(--f-body); font-size:.95rem; display:flex; justify-content:space-between}
+.full ul{margin:0; padding-left:1em; display:flex; flex-direction:column; gap:5px}
+.full .s-org{grid-column:span 3; background:var(--org)} .full .s-ops{grid-column:span 3; background:var(--ops)}
+.full .s-cus{grid-column:span 2; background:var(--cus)} .full .s-pro{grid-column:span 2; background:var(--pro)} .full .s-mkt{grid-column:span 2; background:var(--mkt)}
+.full .s-fin{grid-column:span 6; background:var(--fin)}
+@media (max-width:760px){ .full{grid-template-columns:minmax(0,1fr)} .full > section{grid-column:auto !important} }
+.wc{display:flex; align-items:center; gap:10px; flex-wrap:wrap; font-family:var(--f-mono); font-size:.8rem}
+.meter{flex:1; min-width:140px; height:8px; background:var(--surface-2); border-radius:99px; overflow:hidden}
+.meter i{display:block; height:100%; background:var(--good); border-radius:99px; transition:width .2s}
+.meter.over i{background:var(--warn)}
+
+/* pitch */
+.pitch{font-size:1.06rem; line-height:1.75; max-width:68ch}
+.pitch mark{background:none; color:inherit; padding:1px 2px; border-bottom:3px solid; border-radius:2px}
+.m1{border-color:var(--gold) !important; background:var(--gold-soft) !important}
+.m2{border-color:var(--cus-e) !important; background:var(--cus) !important}
+.m3{border-color:var(--pro-e) !important; background:var(--pro) !important}
+.m4{border-color:var(--ops-e) !important; background:var(--ops) !important}
+.m5{border-color:var(--fin-e) !important; background:var(--fin) !important}
+.legend{display:flex; flex-wrap:wrap; gap:6px}
+.legend span{font-size:.78rem; padding:3px 8px; border-radius:4px; border-bottom:3px solid}
+
+/* chart */
+.chart svg{width:100%; height:auto; display:block}
+.chart text{fill:var(--ink); font-family:var(--f-body)}
+.chart .ax{fill:var(--muted); font-family:var(--f-mono); font-size:11px}
+.chart .grid{stroke:var(--line)}
+.chart .bar{fill:var(--cus-e)}
+.chart .bar.top{fill:var(--gold)}
+
+/* part 2 */
+.p2{padding-block:18px 56px; display:flex; flex-direction:column; gap:18px}
+.step{background:var(--surface); border:1px solid var(--line); border-radius:14px; padding:clamp(18px,3vw,32px); display:flex; flex-direction:column; gap:18px}
+.field{display:flex; flex-direction:column; gap:5px; min-width:0}
+.field label,.lab{font-weight:600; font-size:.9rem}
+.field .hint{font-size:.8rem; color:var(--muted)}
+input[type=text],input[type=number],textarea,select{font:inherit; color:var(--ink); background:var(--bg); border:1px solid var(--line); border-radius:8px; padding:9px 11px; width:100%}
+textarea{min-height:76px; resize:vertical}
+input:focus,textarea:focus{border-color:var(--gold); outline:none; box-shadow:0 0 0 3px var(--gold-soft)}
+.grid3{display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:14px}
+.card{border:1px solid var(--line); border-radius:12px; padding:14px; display:flex; flex-direction:column; gap:10px; background:var(--surface); min-width:0}
+.card.pick{border:2px solid var(--gold); box-shadow:0 0 0 4px var(--gold-soft)}
+.card h3.cardh{margin:0; font-size:.95rem; font-family:var(--f-mono); letter-spacing:.06em; text-transform:uppercase; color:var(--gold-ink)}
+.lenses{display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:10px}
+.lens{border:1px dashed var(--line); border-radius:10px; padding:10px 12px; font-size:.86rem}
+.lens b{display:block; font-size:.9rem; margin-bottom:3px}
+.example{font-size:.86rem; background:var(--surface-2); border-radius:8px; padding:10px 12px}
+.example .k{font-family:var(--f-mono); font-size:.68rem; letter-spacing:.08em; text-transform:uppercase; color:var(--gold-ink); margin-right:6px}
+.slider{display:grid; grid-template-columns:minmax(0,1fr) 2.2em; gap:2px 10px; align-items:center; font-size:.84rem}
+.slider span.l{grid-column:1 / -1; color:var(--muted)}
+.slider output{font-family:var(--f-mono); font-weight:600; text-align:right}
+input[type=range]{width:100%; accent-color:var(--gold)}
+.score{font-family:var(--f-mono); font-size:.85rem; display:flex; justify-content:space-between; align-items:center; gap:8px; border-top:1px solid var(--line); padding-top:8px}
+.score b{font-size:1.2rem}
+.choose{display:flex; gap:8px; align-items:center; font-weight:600; font-size:.9rem}
+.choose input{accent-color:var(--gold); width:18px; height:18px}
+.preview{background:var(--gold-soft); border-radius:10px; padding:14px 16px; font-size:1rem; line-height:1.55}
+.preview .k{display:block; font-family:var(--f-mono); font-size:.68rem; letter-spacing:.08em; text-transform:uppercase; color:var(--gold-ink); margin-bottom:4px}
+.preview .blank{color:var(--muted); font-style:italic}
+.methods{display:grid; grid-template-columns:repeat(auto-fit,minmax(190px,1fr)); gap:10px}
+.method{display:flex; flex-direction:column; gap:4px; border:1px solid var(--line); border-radius:10px; padding:12px; cursor:pointer; font-size:.85rem; background:var(--surface)}
+.method input{position:absolute; opacity:0; pointer-events:none}
+.method b{font-size:.95rem}
+.method:has(input:checked){border:2px solid var(--gold); background:var(--gold-soft)}
+.method:has(input:focus-visible){outline:3px solid var(--gold); outline-offset:2px}
+.bias{font-size:.8rem; font-family:var(--f-mono); padding:4px 8px; border-radius:6px; align-self:flex-start}
+.bias.ok{background:var(--good-soft); color:var(--good)}
+.bias.no{background:var(--warn-soft); color:var(--warn)}
+.bias.idle{background:var(--surface-2); color:var(--muted)}
+.inline{display:flex; flex-wrap:wrap; align-items:center; gap:8px; font-size:.95rem}
+.inline input[type=number]{width:5.5em}
+.inline input[type=text]{flex:1; min-width:200px; width:auto}
+.checks{display:flex; flex-direction:column; gap:6px}
+.checks label{display:flex; gap:10px; align-items:flex-start; font-size:.92rem}
+.checks input{accent-color:var(--good); width:18px; height:18px; margin-top:2px; flex:none}
+.confirm{display:flex; flex-wrap:wrap; gap:8px; align-items:center; background:var(--warn-soft); padding:10px 12px; border-radius:8px; font-size:.9rem}
+.toast{position:fixed; left:50%; transform:translateX(-50%); bottom:calc(20px + env(safe-area-inset-bottom,0px)); background:var(--ink); color:var(--bg); padding:10px 16px; border-radius:8px; font-size:.9rem; z-index:20}
+.later{color:var(--muted); font-size:.82rem}
+.later li{list-style:"○ "}
+.copybox{width:100%; min-height:180px; font-family:var(--f-mono); font-size:.8rem}
+.endcard{display:flex; flex-wrap:wrap; gap:14px; align-items:center; justify-content:space-between; background:var(--ink); color:var(--bg); border-radius:12px; padding:18px 20px}
+.endcard h3{color:var(--on-ink-accent)}
+@media (prefers-reduced-motion: reduce){ *{transition:none !important; animation:none !important} }
+</style>
+</head>
+<body>
+<header class="mast">
+  <div class="wrap">
+    <div class="brand">
+      <span class="eyebrow">AP Business with Personal Finance · Business Canvas Project</span>
+      <h1 class="name">From Idea to Pitch</h1>
+    </div>
+    <nav class="tabs" role="tablist" aria-label="Simulation parts">
+      <button type="button" class="tab" role="tab" id="tab1" aria-selected="true" data-part="1"><span class="n">PART 1</span>Walk through a sample</button>
+      <button type="button" class="tab" role="tab" id="tab2" aria-selected="false" data-part="2"><span class="n">PART 2</span>Build your own</button>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section id="part1" aria-labelledby="tab1">
+    <div class="wrap"><nav class="rail" id="rail1" aria-label="Sample project stops"></nav></div>
+    <div class="wrap p1">
+      <article class="stop" id="stop" aria-live="polite"></article>
+      <aside class="board-col" aria-label="Sample Business Canvas Project progress">
+        <div class="board-title"><b>Curbside Cup · Business Canvas Project</b><span class="mono small muted" id="boardCount">0 / 6</span></div>
+        <div class="board" id="board"></div>
+        <div class="app-strip" id="appStrip"><span data-a="viz">Data viz</span><span data-a="inc">Income stmt</span><span data-a="pitch">Pitch</span></div>
+        <p class="board-note">Each component fills in as you visit it. Select a component to jump there. Items marked <span class="star">Hypothesis tested</span> are the CED deliverables that require testing.</p>
+      </aside>
+    </div>
+  </section>
+
+  <section id="part2" aria-labelledby="tab2" hidden>
+    <div class="wrap"><nav class="rail" id="rail2" aria-label="Builder steps"></nav></div>
+    <div class="wrap p2"><div class="step" id="step"></div></div>
+  </section>
+<div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
+</main>
+
+<script>
+/* ---------------- helpers ---------------- */
+const $ = (s, r=document) => r.querySelector(s);
+const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const words = s => (String(s||"").trim().match(/[A-Za-z0-9$%][\w'’$%.,\-]*/g) || []).length;
+const store = {
+  get(k, d){ try{ const v = localStorage.getItem(k); return v ? JSON.parse(v) : d; }catch(e){ return d; } },
+  set(k, v){ try{ localStorage.setItem(k, JSON.stringify(v)); }catch(e){} },
+  del(k){ try{ localStorage.removeItem(k); }catch(e){} }
+};
+function toast(msg){ const t=$("#toast"); t.textContent=msg; t.hidden=false; clearTimeout(toast.h); toast.h=setTimeout(()=>t.hidden=true,2200); }
+const LETTERS = ["A","B","C","D"];
+
+/* ---------------- component meta ---------------- */
+const COMPS = {
+  org:{name:"Organization", icon:"▥"}, ops:{name:"Operations", icon:"⛓"},
+  cus:{name:"Customer", icon:"◯"}, pro:{name:"Product (Good or Service)", icon:"✦"},
+  mkt:{name:"Market", icon:"⛟"}, fin:{name:"Finance/Accounting", icon:"$"}
+};
+const BOARD_ORDER = ["org","ops","cus","pro","mkt","fin"];
+
+/* ---------------- sample canvas (concise, ≤1,000 words) ---------------- */
+const CANVAS = {
+  org:[
+    ["Vision","A school where every playground, field trip, and art supply is funded by the coffee parents were already going to buy."],
+    ["Mission","Serve fast, fresh iced coffee to parents in the Maple Grove pickup line, turning everyday wait time into money for student projects."],
+    ["Skills assessment","Ava: marketing and social media. Marcus: finance and spreadsheets. Jordan: operations, food handler certified. Gaps: bookkeeping (PTO treasurer mentors us) and design (art club helps)."],
+    ["Strategic decision (PACED)","How do we take orders without slowing the line? Compared cash walk-up (2.9), QR pre-order with windshield tag (4.7), and a custom app (3.1) on speed, cost, and safety. Chose QR pre-order."]
+  ],
+  ops:[
+    ["Supply chain plan","Cold brew concentrate from a local roaster; milk, ice, syrup, and cups from a warehouse club. Mix in cafeteria kitchen at 1:45 → load wagon at 2:15 → label pre-orders by tag number at 2:30 → runners deliver 2:45–3:10 → log sales and waste."],
+    ["Marketing channels","Direct car-side delivery; QR pre-order link in the PTO newsletter and on flyers; a table at Friday family events."],
+    ["KPIs","Average delivery time of 45 seconds or less per car; waste at or below 5% of cups prepared."]
+  ],
+  cus:[
+    ["Problem*","Parents wait about 18 minutes in the pickup line, detour for afternoon coffee, and feel fundraiser fatigue. Tested with 12 interviews (10 dislike product fundraisers; 9 buy coffee 2+ times a week) and 3 days of line observation (average 230 cars)."],
+    ["Target customer*","Working parent, 28–45, picks up 3+ days a week, buys coffee 2+ times a week, pays by phone, wants to support the school. Survey (n=146): 71% pick up 3+ days; 64% buy an afternoon drink 2+ times a week."],
+    ["Preferences*","Iced coffee 41%, cold brew with milk 24%; 62% would pay $4; 58% prefer to order ahead by QR code."],
+    ["Relationships & sales tactics","Fund-o-Meter progress sign at the curb, digital punch card (10th cup free), 2:15 pre-order text reminder."],
+    ["Marketing campaign*","“Sip. Wait. Build.” on PTO Instagram and Facebook, QR flyers in Tuesday folders, SMS sign-up. A/B test: the cause post earned 148 pre-order clicks vs. 64 for the convenience post, so we lead with the cause."],
+    ["KPIs","Monthly repeat-purchase rate of 50% or more; 300 SMS subscribers by December break."]
+  ],
+  pro:[
+    ["Problem-solution fit*","Pivoted from hot coffee and pastries at a curb table (14 sales, spills, 60% pastry waste) to iced coffee delivered to car windows. 11 of 12 re-interviewed parents said it solved their problem."],
+    ["MVP*","3-day wagon pilot with QR pre-orders: 48 → 61 → 77 cups (186 total), 58% repeat buyers, 40-second average delivery."],
+    ["Value proposition","Your afternoon iced coffee, delivered to your car window in under a minute, and every cup funds the playground."],
+    ["Branding*","Curbside Cup; tagline “Sip. Wait. Build.”; cup-on-a-wagon logo in navy and sunshine yellow. Name poll: 63% chose Curbside Cup over Pickup Perk."]
+  ],
+  mkt:[
+    ["Competitive advantage","The only option that comes to the car, cause-driven loyalty, and $1.45 cheaper than the coffee shop's iced latte."],
+    ["PESTEL","P: district fundraising approval. E: rising coffee prices favor value pricing. S: busy dual-income families. T: QR ordering and tap-to-pay. E: cup waste, so compostable cups by spring. L: county health permit, food handler certificate, PTO liability coverage."],
+    ["Competitive landscape","Drive-thru 1.8 mi ($5.45, about a 9-minute wait); gas station 0.6 mi ($2.29, low quality); home-brewed coffee; product-sale fundraisers."],
+    ["SWOT","S: convenience, cause, low overhead. W: 25-minute window, depends on volunteers, winter dip. O: hot cocoa in winter, other district schools. T: copycats, policy changes, drive-thru promotions."],
+    ["KPI","Reach 24% of pickup-line cars (about 55) on selling days by March."]
+  ],
+  fin:[
+    ["Price*","$4 per cup (competitive/value pricing). Survey: at $4, 62% buy, giving $179.80 gross profit per 100 parents vs. $153.90 at $3 and $105.30 at $5."],
+    ["Startup costs","$1,000: wagon, dispensers, coolers, card reader, signs, supplies, permit."],
+    ["Sources of capital","PTO seed grant $600; roaster in-kind sponsorship $250; team savings $150."],
+    ["Revenue projection","55 cups × 3 days × 36 weeks = 5,940 cups × $4 = $23,760."],
+    ["KPIs","Gross margin of 70% or more; recover startup costs by week 3; raise $15,000 for playground shade by May."]
+  ]
+};
+
+const PITCH = [
+  ["m1","Every afternoon, about 230 cars idle in the pickup line at Maple Grove Elementary for 18 minutes. Then the fundraiser flyers come home, asking those same parents to sell wrapping paper to their coworkers."],
+  ["m2","We tested that frustration. Ten of the twelve parents we interviewed said they are tired of product fundraisers, and nine buy an afternoon coffee at least twice a week, usually with a detour."],
+  ["m3","Curbside Cup brings fresh iced coffee to your car window. Order ahead with a QR code, hang your number tag, and a student runner delivers in under a minute."],
+  ["m4","We serve working parents who pick up three or more days a week and want a boost without losing time."],
+  ["m5","Unlike the drive-thru 1.8 miles away, we come to you, cost $1.45 less, and every $4 cup helps fund our playground shade structure. In our three-day pilot, we sold 186 cups, and 58 percent of buyers came back."],
+  ["m1","Curbside Cup. Sip. Wait. Build."]
+];
+const PITCH_KEYS = [
+  ["m1","Attention-grabbing introduction"],
+  ["m2","Hypothesis-tested problem"],
+  ["m3","Brief description of the product"],
+  ["m4","Target customer profile"],
+  ["m5","How it creates value / beats alternatives"]
+];
+
+/* ---------------- deliverable card builder ---------------- */
+function dv(title, starred, body, test){
+  let t = "";
+  if(test){
+    t = `<dl class="test">
+      <dt>Hypothesis</dt><dd>${test.h}</dd>
+      <dt>Method</dt><dd>${test.m}</dd>
+      <dt>Result</dt><dd>${test.r}</dd>
+      <dt>Decision</dt><dd class="${test.pivot?'pivot':'verdict'}">${test.d}</dd></dl>`;
+  }
+  return `<div class="dv"><div class="dv-t"><b>${title}</b>${starred?'<span class="star">Hypothesis tested</span>':''}</div>${body}${t}</div>`;
+}
+
+/* ---------------- bar chart ---------------- */
+function barChart(){
+  const data = [["Iced coffee",41],["Cold brew with milk",24],["Lemonade",15],["Hot coffee",9],["No drink",11]];
+  const W=560, H=260, L=150, R=40, T=34, B=34, max=50;
+  const bw=(H-T-B)/data.length;
+  const x=v=>L+(W-L-R)*v/max;
+  let g="";
+  for(let v=0; v<=max; v+=10){ g+=`<line class="grid" x1="${x(v)}" y1="${T}" x2="${x(v)}" y2="${H-B}" stroke-width="1"/><text class="ax" x="${x(v)}" y="${H-B+16}" text-anchor="middle">${v}%</text>`; }
+  data.forEach(([k,v],i)=>{
+    const y=T+i*bw+5;
+    g+=`<text x="${L-10}" y="${y+bw/2-1}" text-anchor="end" dominant-baseline="middle" font-size="13">${k}</text>
+        <rect class="bar ${i===0?'top':''}" x="${L}" y="${y}" width="${x(v)-L}" height="${bw-12}" rx="3"/>
+        <text x="${x(v)+6}" y="${y+(bw-12)/2}" dominant-baseline="middle" font-size="13" font-weight="600">${v}%</text>`;
+  });
+  return `<div class="chart"><svg viewBox="0 0 ${W} ${H}" role="img" aria-label="Bar chart of preferred pickup-line drink among 146 surveyed parents: iced coffee 41 percent, cold brew with milk 24, lemonade 15, hot coffee 9, no drink 11.">
+    <text x="0" y="16" font-size="14" font-weight="700">Preferred pickup-line drink (survey of 146 Maple Grove parents)</text>${g}
+    <text class="ax" x="${(L+W-R)/2}" y="${H-2}" text-anchor="middle">Share of respondents</text></svg></div>`;
+}
+
+/* ---------------- Part 1 stops ---------------- */
+const STOPS = [
+ { id:"spark", rail:"The spark", comp:null, chips:[["c-app","Start here"]],
+   title:"Every business starts with something you notice",
+   body:`
+   <div class="spark">
+     <video src="spark.mp4" controls playsinline preload="metadata" aria-label="Short video: a parent's idea to sell iced coffee in the school pickup line"></video>
+     <div style="display:flex;flex-direction:column;gap:12px">
+       <p class="quote">“Schools are always asking us to fundraise… but what if they just sold iced coffee in the parent pickup line? We would fund a new playground by Friday.”</p>
+       <p class="small muted">Three AP Business with Personal Finance students heard a parent say this while picking up younger siblings at Maple Grove Elementary. They decided to find out if the idea could become a real business. Their team name: <b>Curbside Cup</b>.</p>
+     </div>
+   </div>
+   <p class="lede">Look at how the spark is built. It has three parts, and you will use the same pattern in Part 2.</p>
+   <div class="formula">
+     <div><span class="k">Observation</span>Schools are always asking us to fundraise.</div>
+     <div><span class="k">But what if…</span>…they sold iced coffee in the pickup line?</div>
+     <div><span class="k">Impact</span>We would fund a new playground.</div>
+   </div>
+   <div class="callout"><b>A spark is not a business yet.</b> It is a bundle of assumptions. Before building anything, the team listed what had to be true: parents really are tired of fundraisers; parents want coffee at pickup; they would pay enough to raise real money; the school would allow it; and it could run without slowing the line. Each of these is a <b>business hypothesis</b> to test.</div>
+   <p class="small muted">Next, you will follow the team through all six components of their Business Canvas Project, then the appendix (data visualization, income statement, and pitch).</p>`,
+   q:{prompt:"Which part of the Curbside Cup spark is a hypothesis the team must test before building anything?",
+      opts:["The school holds fundraisers several times a year.","Coffee shops in town sell iced coffee.","Parents in the pickup line would buy iced coffee often enough to fund a school project.","The pickup line happens every school day."],
+      a:2, why:"The other three are facts the team can check on a calendar or by looking. Whether parents would actually buy, and how often, is an assumption about customer behavior. That makes it a business hypothesis."}
+ },
+ { id:"cus", rail:"Customer", comp:"cus", chips:[["c-cus","Customer"],["","Units 1, 2, 4"]],
+   title:"Customer: find and prove the problem",
+   body:`
+   <p class="lede">The team started with the customer, not the coffee. A product only matters if it solves a real problem, need, or want, so the first job was to prove the problem exists.</p>
+   <div class="deliv">
+   ${dv("Identification and validation of a customer problem, need, or want",true,
+     `<p>Parents of Maple Grove students wait about 18 minutes in the afternoon pickup line, and many make a separate drive-thru stop for coffee. They also report “fundraiser fatigue” from selling products to friends and coworkers.</p>`,
+     {h:"Most pickup-line parents dislike product-sale fundraisers and buy an afternoon coffee at least twice a week.",
+      m:"12 one-on-one interviews (in-depth, qualitative) plus observation of the pickup line on 3 afternoons (behavior).",
+      r:"10 of 12 disliked selling products; 9 of 12 buy afternoon coffee 2+ times a week. Observation: an average of 230 cars and an 18-minute wait.",
+      d:"Validated. Move on to a solution."})}
+   <div class="two">
+     <div class="qbox good"><span class="lbl">Neutral questions they asked</span>“Tell me about the last school fundraiser you took part in.”<br>“What do you usually do while you wait in the pickup line?”<br>“Walk me through a typical school-day afternoon.”</div>
+     <div class="qbox bad"><span class="lbl">Leading questions they avoided</span>“Wouldn't you love coffee delivered to your car?”<br>“Don't you hate selling wrapping paper?”<br><span class="small">These push people toward the answer you want and skew the data.</span></div>
+   </div>
+   ${dv("Target customer profile",true,
+     `<p><b>The Pickup-Line Parent:</b> age 28–45, works full or part time, picks up 3+ days a week, waits 15–20 minutes, buys coffee 2+ times a week at a drive-thru or gas station, pays by phone, and wants to support the school without selling to coworkers.</p>`,
+     {h:"Our core customer picks up often and already buys afternoon drinks.",
+      m:"Online survey sent through the PTO newsletter (n = 146). Surveys give a larger amount of quantitative data.",
+      r:"71% pick up 3+ days a week; 64% buy an afternoon drink 2+ times a week.",
+      d:"Validated. The profile above is built from these numbers."})}
+   ${dv("Research findings on customer preferences",true,
+     `<ul><li>Preferred drink: iced coffee 41%, cold brew with milk 24% (see the data visualization in the appendix).</li><li>62% would pay $4 or more.</li><li>58% would rather order ahead with a QR code than pay at the car.</li></ul>`)}
+   ${dv("Plan to build customer relationships, including sales tactics",false,
+     `<ul><li><b>Fund-o-Meter</b> sign at the curb shows progress toward the playground goal.</li><li>Digital punch card: 10th cup free.</li><li>Sales tactic: a 2:15 p.m. text reminder to pre-order.</li></ul>`)}
+   ${dv("Marketing campaign, including digital marketing tools",true,
+     `<p><b>“Sip. Wait. Build.”</b> A four-week launch on the PTO's Instagram and Facebook pages, QR flyers in Tuesday folders, and an SMS sign-up list.</p>`,
+     {h:"Parents respond more to the cause than to convenience.",
+      m:"A/B test: two Instagram posts with identical images. A said “Fund the playground.” B said “Skip the drive-thru.”",
+      r:"Post A earned 148 pre-order clicks; Post B earned 64.",
+      d:"Lead every message with the cause; mention convenience second."})}
+   ${dv("KPIs for customer-related goals",false,
+     `<p>Goal: build loyal, repeat customers.</p><ul><li>Monthly repeat-purchase rate of 50% or more.</li><li>300 SMS subscribers by December break.</li></ul>`)}
+   </div>`,
+   q:{prompt:"Why did the team use one-on-one interviews, rather than a survey, to validate the problem first?",
+      opts:["They needed in-depth, qualitative explanations and the chance to ask follow-up questions.","They needed a large amount of quantitative data that reflects the whole school population.","They wanted to watch actual customer behavior instead of collecting opinions.","They wanted to compare customer responses to two viable alternatives."],
+      a:0, why:"Interviews and focus groups give in-depth, qualitative data from a small group and allow follow-up questions (CED 2.3.C.5). Surveys fit large quantitative samples, observations capture behavior, and A/B tests compare two alternatives."}
+ },
+ { id:"pro", rail:"Product", comp:"pro", chips:[["c-pro","Product (Good or Service)"],["","Units 1, 2"]],
+   title:"Product: test the solution, then pivot",
+   body:`
+   <p class="lede">The team's first solution failed. That is normal, and it is the best part of their story. Testing showed what to change before they spent real money.</p>
+   <div class="deliv">
+   ${dv("Product idea that achieves problem-solution fit",true,
+     `<p><b>Version 1:</b> hot coffee and pastries sold from a table at the curb.<br><b>Version 2:</b> iced coffee ordered ahead by QR code and carried to the car window by student runners.</p>`,
+     {h:"Parents will walk up to a curbside table to buy hot coffee and pastries.",
+      m:"One-day trial table (experiment), then re-interviews with the original 12 parents about Version 2.",
+      r:"Only 14 sales. Parents would not leave their place in line, hot drinks spilled at car windows, and 60% of pastries went to waste. For Version 2, 11 of 12 parents said it solved their problem.",
+      d:"Pivot to Version 2: problem-solution fit achieved.", pivot:true})}
+   ${dv("Minimum viable product (MVP) used to assess product-market fit",true,
+     `<p>A three-day pilot (approved by the principal and PTO): one wagon, two insulated dispensers, two flavors, and a QR pre-order form. No logo cups, no app, nothing extra.</p>
+      <div class="tbl-wrap"><table><thead><tr><th>Pilot day</th><th class="num">Cups sold</th><th class="num">Avg. delivery</th></tr></thead>
+      <tbody><tr><td>Day 1</td><td class="num">48</td><td class="num">46 sec</td></tr><tr><td>Day 2</td><td class="num">61</td><td class="num">41 sec</td></tr><tr><td>Day 3</td><td class="num">77</td><td class="num">35 sec</td></tr>
+      <tr class="total"><td>Total / average</td><td class="num">186</td><td class="num">40 sec</td></tr></tbody></table></div>`,
+     {h:"Demand is strong enough to earn a profit (product-market fit).",
+      m:"MVP pilot measuring real purchases, repeat buyers, and delivery time.",
+      r:"Sales rose every day; 58% of buyers came back during the pilot; zero complaints about slowing the line.",
+      d:"Product-market fit signal is strong. Plan full launch."})}
+   ${dv("Value proposition",false,
+     `<p>“For pickup-line parents who want an afternoon coffee without a detour, Curbside Cup delivers fresh iced coffee to your car window in under a minute, and every cup funds our school's new playground shade.”</p>`)}
+   ${dv("Branding/brand identity",true,
+     `<p>Name: <b>Curbside Cup</b>. Tagline: <b>“Sip. Wait. Build.”</b> Logo: a cup riding in a little wagon, in school navy and sunshine yellow.</p>`,
+     {h:"Parents will prefer a name that says where the service happens.",
+      m:"Name poll added to the parent survey (n = 146).",
+      r:"Curbside Cup 63%, Pickup Perk 37%.",
+      d:"Adopt “Curbside Cup.”"})}
+   </div>`,
+   q:{prompt:"Which evidence best shows that the MVP helped the team assess product-market fit?",
+      opts:["The team designed a logo using the school's colors.","Parents said in interviews that they dislike selling wrapping paper.","The team wrote a vision statement about funding playgrounds.","Daily sales rose from 48 to 77 cups, and 58% of buyers came back."],
+      a:3, why:"Product-market fit occurs when customer demand is sufficient to generate profit (CED 2.4.A.3). Real, rising purchases and repeat buyers during the MVP pilot measure demand. The interview finding validates the problem, not the market fit."}
+ },
+ { id:"org", rail:"Organization", comp:"org", chips:[["c-org","Organization"],["","Units 1, 4"]],
+   title:"Organization: who we are and how we decide",
+   body:`
+   <p class="lede">With a tested idea in hand, the team defined its purpose and made a structured decision about its biggest operational risk.</p>
+   <div class="deliv">
+   ${dv("Vision statement",false,`<p>“A school where every playground, field trip, and art supply is funded by the coffee parents were already going to buy.”</p><p class="small muted">A vision states the business's core values and aspirations: where it hopes to go.</p>`)}
+   ${dv("Mission statement",false,`<p>“Curbside Cup serves fast, fresh iced coffee to parents in the Maple Grove pickup line, turning everyday wait time into money for student projects.”</p><p class="small muted">A mission describes what the business does, for whom, and how, today.</p>`)}
+   ${dv("Skills assessment",false,`<div class="tbl-wrap"><table><thead><tr><th>Member</th><th>Strengths</th><th>Gap and plan</th></tr></thead><tbody>
+     <tr><td>Ava</td><td>Marketing, social media, writing</td><td>Finance → works with Marcus on pricing</td></tr>
+     <tr><td>Marcus</td><td>Finance, spreadsheets</td><td>Public speaking → practices the pitch weekly</td></tr>
+     <tr><td>Jordan</td><td>Operations; food handler certificate from café job</td><td>Design → art club creates signage</td></tr>
+     <tr><td>Team</td><td colspan="2">Bookkeeping gap → PTO treasurer mentors the team monthly</td></tr></tbody></table></div>`)}
+   ${dv("Strategic decision using the PACED model",false,`
+     <p><b>P · Problem:</b> How do we take orders and payments without slowing the pickup line?<br>
+     <b>A · Alternatives:</b> cash-only walk-up sales; QR pre-order with a numbered windshield tag; a custom app.<br>
+     <b>C · Criteria:</b> speed (40%), startup cost (30%), safety and ease (30%).<br>
+     <b>E · Evaluation:</b> scored 1–5, then weighted.</p>
+     <div class="tbl-wrap"><table><thead><tr><th>Alternative</th><th class="num">Speed ×0.4</th><th class="num">Cost ×0.3</th><th class="num">Safety ×0.3</th><th class="num">Weighted</th></tr></thead><tbody>
+      <tr><td>Cash walk-up</td><td class="num">2</td><td class="num">5</td><td class="num">2</td><td class="num">2.9</td></tr>
+      <tr class="win"><td>QR pre-order + tag</td><td class="num">5</td><td class="num">4</td><td class="num">5</td><td class="num">4.7</td></tr>
+      <tr><td>Custom app</td><td class="num">4</td><td class="num">1</td><td class="num">4</td><td class="num">3.1</td></tr></tbody></table></div>
+     <p><b>D · Decision:</b> QR pre-order with a windshield tag. It is fastest and safest, and it costs only a free form tool and printed tags.</p>`)}
+   </div>`,
+   q:{prompt:"In the PACED model, what role do the criteria play in the team's ordering decision?",
+      opts:["They are the different ordering options the team could choose from.","They are the standards (speed, cost, safety) used to judge each option.","They are the final option the team recommends.","They describe the problem the team needs to solve."],
+      a:1, why:"Criteria are the standards used to evaluate each alternative. The options themselves are the alternatives, the final choice is the decision, and the question being answered is the problem."}
+ },
+ { id:"ops", rail:"Operations", comp:"ops", chips:[["c-ops","Operations"],["","Units 1, 2, 4"]],
+   title:"Operations: how the coffee gets to the car",
+   body:`
+   <p class="lede">Operations turns a good idea into something that happens reliably at 2:45 every selling day.</p>
+   <div class="deliv">
+   ${dv("Supply chain plan, including process(es) for producing the good or service",false,`
+     <p><b>Inputs:</b> cold brew concentrate from a local roaster (wholesale); milk, ice, vanilla syrup, cups, lids, and straws from a warehouse club. Restocked every Monday.</p>
+     <div class="tbl-wrap"><table><thead><tr><th>Time</th><th>Process step</th></tr></thead><tbody>
+       <tr><td class="mono">1:45</td><td>Mix batches in the cafeteria kitchen (approved by the food service manager)</td></tr>
+       <tr><td class="mono">2:15</td><td>Load dispensers and coolers into the wagon</td></tr>
+       <tr><td class="mono">2:30</td><td>Pour pre-orders and label them with each car's tag number</td></tr>
+       <tr><td class="mono">2:45–3:10</td><td>Runners deliver down the line; card reader handles walk-up orders</td></tr>
+       <tr><td class="mono">3:20</td><td>Clean up; log cups sold and cups wasted</td></tr></tbody></table></div>`)}
+   ${dv("Marketing channel(s)",false,`<ul><li>Direct to the customer at the car window.</li><li>QR pre-order link in the PTO newsletter and on flyers.</li><li>A Curbside Cup table at Friday family events.</li></ul>`)}
+   ${dv("KPIs for operations-related goals",false,`<p>Goal: fast, low-waste service.</p><ul><li>Average delivery time of 45 seconds or less per car.</li><li>Waste at or below 5% of cups prepared.</li></ul>`)}
+   </div>`,
+   q:{prompt:"Which of these is a KPI for an operations-related goal?",
+      opts:["Average delivery time of 45 seconds or less per car","Monthly repeat-purchase rate of 50% or more","Gross margin of at least 70%","Reach 24% of pickup-line cars on selling days by March"],
+      a:0, why:"Delivery time measures how well the production and delivery process works, so it is an operations KPI. Repeat purchases measure customers, gross margin measures finance, and share of cars measures the market."}
+ },
+ { id:"mkt", rail:"Market", comp:"mkt", chips:[["c-mkt","Market"],["","Units 1, 2, 4"]],
+   title:"Market: the bigger picture and the competition",
+   body:`
+   <p class="lede">The team zoomed out to see the forces around their business and who else competes for the same parents' money.</p>
+   <div class="deliv">
+   ${dv("Plan to seek competitive advantage",false,`<ul><li><b>Convenience:</b> the only option that comes to the car, with no detour.</li><li><b>Cause:</b> every cup funds the playground, which builds loyalty.</li><li><b>Price:</b> $4, which is $1.45 less than the coffee shop's iced latte.</li></ul>`)}
+   ${dv("PESTEL analysis",false,`<div class="tbl-wrap"><table><tbody>
+     <tr><td><b>Political</b></td><td>District policy requires principal approval and PTO oversight for fundraisers.</td></tr>
+     <tr><td><b>Economic</b></td><td>Rising coffee prices; parents cutting back on $6 drinks favor a value price.</td></tr>
+     <tr><td><b>Social</b></td><td>Busy dual-income families; parents want to support the school without selling to coworkers.</td></tr>
+     <tr><td><b>Technological</b></td><td>QR ordering and tap-to-pay make fast car-side sales possible.</td></tr>
+     <tr><td><b>Environmental</b></td><td>Plastic cup waste; plan to switch to compostable cups by spring.</td></tr>
+     <tr><td><b>Legal</b></td><td>County health permit for food service, food handler certificate, PTO liability coverage.</td></tr></tbody></table></div>`)}
+   ${dv("Research findings on competitive landscape",false,`<div class="tbl-wrap"><table><thead><tr><th>Competitor</th><th>Distance</th><th class="num">Price</th><th>Notes</th></tr></thead><tbody>
+     <tr><td>Drive-thru coffee shop</td><td>1.8 mi</td><td class="num">$5.45</td><td>About a 9-minute drive-thru wait</td></tr>
+     <tr><td>Gas station</td><td>0.6 mi</td><td class="num">$2.29</td><td>Cheap; parents rated quality low</td></tr>
+     <tr><td>Home-brewed</td><td>n/a</td><td class="num">~$0.60</td><td>Cheapest, but takes planning</td></tr>
+     <tr><td>Product-sale fundraisers</td><td>n/a</td><td class="num">varies</td><td>Indirect competitor for fundraising dollars</td></tr></tbody></table></div>`)}
+   ${dv("Framework analysis of market: SWOT",false,`<div class="tbl-wrap"><table><tbody>
+     <tr><td><b>Strengths</b></td><td>Convenience, cause appeal, low overhead (volunteer runners)</td></tr>
+     <tr><td><b>Weaknesses</b></td><td>Only a 25-minute sales window, depends on volunteers, iced drinks dip in winter</td></tr>
+     <tr><td><b>Opportunities</b></td><td>Add hot cocoa in winter, expand to other district schools</td></tr>
+     <tr><td><b>Threats</b></td><td>Copycat fundraisers, district policy changes, drive-thru promotions</td></tr></tbody></table></div>`)}
+   ${dv("KPI for market-related goal",false,`<p>Reach 24% of pickup-line cars (about 55 of 230) on selling days by March.</p>`)}
+   </div>`,
+   q:{prompt:"In the team's PESTEL analysis, the county health department's food service rules belong in which category?",
+      opts:["Political","Social","Legal","Environmental"],
+      a:2, why:"Laws and regulations a business must follow, such as health permits and certification rules, are legal factors. The district's internal approval policy was listed under political."}
+ },
+ { id:"fin", rail:"Finance", comp:"fin", chips:[["c-fin","Finance/Accounting"],["","Units 2, 3, 4"]],
+   title:"Finance/Accounting: can it raise real money?",
+   body:`
+   <p class="lede">This is where the playground promise gets checked. The team priced the product with evidence and projected a full school year.</p>
+   <div class="deliv">
+   ${dv("Price and pricing strategy",true,`
+     <p><b>$4 per 16-oz cup.</b> Strategy: competitive (value) pricing, set below the coffee shop and rounded for quick payment. Cost of goods sold per cup is $1.10 (concentrate $0.45, milk $0.20, ice $0.10, syrup $0.10, cup/lid/straw $0.25).</p>
+     <div class="tbl-wrap"><table><thead><tr><th>Price</th><th class="num">% who would buy</th><th class="num">Profit per cup</th><th class="num">Gross profit per 100 parents</th></tr></thead><tbody>
+       <tr><td>$3.00</td><td class="num">81%</td><td class="num">$1.90</td><td class="num">$153.90</td></tr>
+       <tr class="win"><td>$4.00</td><td class="num">62%</td><td class="num">$2.90</td><td class="num">$179.80</td></tr>
+       <tr><td>$5.00</td><td class="num">27%</td><td class="num">$3.90</td><td class="num">$105.30</td></tr></tbody></table></div>`,
+     {h:"A $4 price earns more total gross profit than a lower or higher price.",
+      m:"Price-sensitivity question in the parent survey (n = 146).",
+      r:"$4 produced the highest gross profit per 100 parents.",
+      d:"Set the price at $4."})}
+   ${dv("Startup costs",false,`<div class="tbl-wrap"><table><tbody>
+     <tr><td>Wagon cart</td><td class="num">$220</td></tr><tr><td>2 insulated beverage dispensers</td><td class="num">$180</td></tr>
+     <tr><td>3 coolers</td><td class="num">$120</td></tr><tr><td>Card reader</td><td class="num">$60</td></tr>
+     <tr><td>Banner and yard signs</td><td class="num">$90</td></tr><tr><td>Aprons, pitchers, scoops, cleaning supplies</td><td class="num">$230</td></tr>
+     <tr><td>County temporary food permit</td><td class="num">$100</td></tr><tr class="total"><td>Total startup costs</td><td class="num">$1,000</td></tr></tbody></table></div>`)}
+   ${dv("Potential source(s) of financial capital",false,`<ul><li>PTO seed grant: $600</li><li>Local roaster in-kind sponsorship (first case of concentrate and a dispenser loan): $250</li><li>Team members' personal savings: $150</li></ul>`)}
+   ${dv("Revenue projection",false,`<p class="mono">55 cups/day × 3 selling days/week × 36 weeks = 5,940 cups<br>5,940 cups × $4.00 = <b>$23,760</b> year-one revenue</p><p class="small muted">55 cups is below the pilot's 62-cup daily average, a deliberately conservative estimate.</p>`)}
+   ${dv("KPIs for finance-related goals",false,`<ul><li>Gross margin of 70% or more (projected: 72.5%).</li><li>Recover the $1,000 startup cost by week 3 (about $478 gross profit per week).</li><li>Raise $15,000 for the playground shade structure by May.</li></ul>`)}
+   </div>`,
+   q:{prompt:"Using the survey data, why did the team choose $4 instead of $3?",
+      opts:["Fewer parents said they would buy at $3 than at $4.","$4 is higher than the coffee shop's price, which signals quality.","Survey respondents said $4 was their favorite price.","At $4, expected gross profit per 100 parents ($179.80) beats $3 ($153.90), even though fewer people buy."],
+      a:3, why:"More parents would buy at $3 (81%), but each cup earns only $1.90. At $4, 62% buy and each cup earns $2.90, so total gross profit is higher. Pricing decisions weigh volume against profit per unit."}
+ },
+ { id:"app", rail:"Appendix", comp:null, app:["viz","inc"], chips:[["c-app","Appendix"],["","Units 2, 3"]],
+   title:"Appendix: data visualization and income statement",
+   body:`
+   <p class="lede">The appendix backs up the Business Canvas Project with evidence. The data visualization must show a real research finding, and the income statement shows projected year-one performance.</p>
+   <div class="deliv">
+   ${dv("Data visualization",false, barChart() + `<p class="small muted">A labeled bar chart of an actual customer research finding. This is the chart that led the team to sell iced coffee as its main product.</p>`)}
+   ${dv("Projected income statement · Year one",false,`<div class="tbl-wrap"><table><tbody>
+     <tr class="sub"><td>Revenue (5,940 cups × $4.00)</td><td class="num">$23,760</td></tr>
+     <tr><td>Cost of goods sold (5,940 × $1.10)</td><td class="num">($6,534)</td></tr>
+     <tr class="total"><td>Gross profit</td><td class="num">$17,226</td></tr>
+     <tr><td>&nbsp;&nbsp;Liability insurance rider</td><td class="num">$400</td></tr>
+     <tr><td>&nbsp;&nbsp;Payment processing fees (3% of revenue)</td><td class="num">$713</td></tr>
+     <tr><td>&nbsp;&nbsp;Marketing and printing</td><td class="num">$250</td></tr>
+     <tr><td>&nbsp;&nbsp;Volunteer appreciation</td><td class="num">$300</td></tr>
+     <tr class="sub"><td>Total operating expenses</td><td class="num">($1,663)</td></tr>
+     <tr class="total"><td>Pretax income</td><td class="num">$15,563</td></tr></tbody></table></div>
+     <p class="small muted">Pretax income clears the $15,000 playground goal. Startup equipment is listed separately under startup costs.</p>`)}
+   </div>`,
+   q:{prompt:"How did the team calculate gross profit on the income statement?",
+      opts:["Revenue minus all operating expenses","Revenue ($23,760) minus cost of goods sold ($6,534)","Pretax income plus startup costs","Cups sold multiplied by price"],
+      a:1, why:"Gross profit = revenue − cost of goods sold. Subtracting operating expenses from gross profit then gives pretax income. Cups × price is revenue."}
+ },
+ { id:"pitch", rail:"Pitch", comp:null, app:["pitch"], chips:[["c-app","Appendix · Pitch"],["","Unit 3"]],
+   title:"The pitch: 200 words, 60 seconds",
+   body:`
+   <p class="lede">The team used its Business Canvas Project to write an elevator pitch. Every claim in it comes from a component you just walked through. Each color below marks one required element.</p>
+   <div class="legend">${PITCH_KEYS.map(([c,l])=>`<span class="${c}">${l}</span>`).join("")}</div>
+   <div class="dv"><p class="pitch">${PITCH.map(([c,t])=>`<mark class="${c}">${t}</mark>`).join(" ")}</p>
+   <div class="wc"><span id="pitchWc"></span><div class="meter"><i id="pitchMeter"></i></div><span id="pitchSec"></span></div></div>
+   <div class="two">
+     <div class="callout"><b>Where each line came from</b><br>Hook → line observation (Customer)<br>Tested problem → interviews (Customer)<br>Product → MVP and value proposition (Product)<br>Customer → target customer profile<br>Advantage → competitive landscape, pricing, pilot (Market, Finance)</div>
+     <div class="callout"><b>What the team cut</b><br>The full PESTEL, the SWOT, startup costs, and the PACED table. They are strong evidence, but a 60-second pitch keeps only what convinces a listener the idea is worth backing.</div>
+   </div>`,
+   q:{prompt:"Which sentence from the pitch shows that the problem was hypothesis-tested?",
+      opts:["“Ten of the twelve parents we interviewed said they are tired of product fundraisers…”","“Curbside Cup. Sip. Wait. Build.”","“Order ahead with a QR code, hang your number tag, and a student runner delivers in under a minute.”","“Unlike the drive-thru 1.8 miles away, we come to you…”"],
+      a:0, why:"Citing interview results (10 of 12) shows the problem was tested with real potential customers. The others describe the product, the brand, or the competitive advantage."}
+ },
+ { id:"full", rail:"Finished project", comp:null, chips:[["c-app","Complete"]],
+   title:"The finished Business Canvas Project",
+   body:"", q:null }
+];
+
+/* ---------------- Part 1 state & render ---------------- */
+const P1 = store.get("itp_p1", {i:0, seen:[0], ans:{}});
+function compStopIndex(c){ return STOPS.findIndex(s=>s.comp===c); }
+
+function renderRail1(){
+  $("#rail1").innerHTML = STOPS.map((s,i)=>`<button type="button" data-i="${i}" class="${i===P1.i?'cur':''} ${P1.seen.includes(i)&&i!==P1.i?'done':''}" aria-current="${i===P1.i?'step':'false'}"><span class="k">Stop ${i+1}</span>${s.rail}</button>`).join("");
+}
+function renderBoard(){
+  const filled = BOARD_ORDER.filter(c=>P1.seen.includes(compStopIndex(c)));
+  const cur = STOPS[P1.i];
+  $("#board").innerHTML = BOARD_ORDER.map(c=>{
+    const f = filled.includes(c) || cur.id==="full";
+    return `<button type="button" class="cell c-${c} ${f?'filled':''} ${cur.comp===c?'now':''}" data-c="${c}"><span class="nm">${COMPS[c].name}<span aria-hidden="true">${COMPS[c].icon}</span></span><span class="st">${f?CANVAS[c].length+" deliverables ✓":"not yet"}</span></button>`;
+  }).join("");
+  $("#boardCount").textContent = (cur.id==="full"?6:filled.length) + " / 6";
+  const appSeen = new Set(); STOPS.forEach((s,i)=>{ if(s.app && P1.seen.includes(i)) s.app.forEach(a=>appSeen.add(a)); });
+  document.querySelectorAll("#appStrip span").forEach(sp=>sp.classList.toggle("filled", appSeen.has(sp.dataset.a)));
+}
+function canvasWords(){
+  let n=0; Object.values(CANVAS).forEach(arr=>arr.forEach(([k,v])=>{ n+=words(k)+words(v); })); return n;
+}
+function fullCanvasHTML(){
+  const sec = c => `<section class="s-${c}"><h3>${COMPS[c].name}<span aria-hidden="true">${COMPS[c].icon}</span></h3><ul>${CANVAS[c].map(([k,v])=>`<li><b>${esc(k)}:</b> ${esc(v)}</li>`).join("")}</ul></section>`;
+  return `<div class="full">${BOARD_ORDER.map(sec).join("")}</div>`;
+}
+function renderStop(){
+  const s = STOPS[P1.i];
+  let html = `<div class="stop-head"><div class="chips">${s.chips.map(([c,t])=>`<span class="chip ${c}">${t}</span>`).join("")}</div><h2>${s.title}</h2></div>`;
+  if(s.id==="full"){
+    const n = canvasWords();
+    html += `<p class="lede">Here is everything on one page. The CED allows up to 1,000 words of text in the final Business Canvas Project. Bullet points, notes, and short sentences are all acceptable. Starred items (*) record hypothesis testing.</p>
+      <div class="wc"><span>${n.toLocaleString()} / 1,000 words</span><div class="meter ${n>1000?'over':''}"><i style="width:${Math.min(100,n/10)}%"></i></div></div>
+      <div class="tbl-wrap">${fullCanvasHTML()}</div>
+      <div class="dv"><div class="dv-t"><b>Appendix · Pitch</b></div><p class="pitch">${PITCH.map(p=>p[1]).join(" ")}</p></div>
+      <div class="endcard"><div><h3>Your turn.</h3><p>You've seen a finished project. Next you'll find your own problem, test it, and shape it into a business idea and a pitch.</p></div><button type="button" class="btn gold" id="goP2">Start Part 2 →</button></div>`;
+  } else {
+    html += s.body;
+  }
+  if(s.q){
+    const picked = P1.ans[s.id];
+    html += `<div class="check"><span class="k">Check your understanding</span><p><b>${s.q.prompt}</b></p><div class="opts">${s.q.opts.map((o,i)=>{
+      let cls=""; if(picked!==undefined){ if(i===s.q.a) cls="right"; else if(i===picked) cls="wrong"; }
+      return `<button type="button" class="opt ${cls}" data-o="${i}" ${picked!==undefined?'aria-disabled="true"':''}><span class="L">${LETTERS[i]}</span><span>${o}</span></button>`;}).join("")}</div>
+      ${picked!==undefined?`<div class="fb"><b>${picked===s.q.a?"Correct.":"Not quite. The answer is "+LETTERS[s.q.a]+"."}</b>${s.q.why}</div>`:""}</div>`;
+  }
+  html += `<div class="nav"><button type="button" class="btn" id="prev" ${P1.i===0?'disabled':''}>← Back</button>${P1.i<STOPS.length-1?`<button type="button" class="btn primary" id="next">Next: ${STOPS[P1.i+1].rail} →</button>`:""}</div>`;
+  $("#stop").innerHTML = html;
+  if(s.id==="pitch"){
+    const n = words(PITCH.map(p=>p[1]).join(" "));
+    $("#pitchWc").textContent = n+" / 200 words";
+    $("#pitchMeter").style.width = Math.min(100,n/2)+"%";
+    $("#pitchSec").textContent = "≈ "+Math.round(n/150*60)+" sec aloud";
+  }
+}
+function go1(i){
+  P1.i = Math.max(0, Math.min(STOPS.length-1, i));
+  if(!P1.seen.includes(P1.i)) P1.seen.push(P1.i);
+  store.set("itp_p1", P1);
+  renderRail1(); renderBoard(); renderStop();
+}
+$("#rail1").addEventListener("click", e=>{ const b=e.target.closest("button[data-i]"); if(b){ go1(+b.dataset.i); $("#stop").scrollIntoView({block:"start"}); } });
+$("#board").addEventListener("click", e=>{ const b=e.target.closest("[data-c]"); if(b){ go1(compStopIndex(b.dataset.c)); } });
+$("#stop").addEventListener("click", e=>{
+  const o = e.target.closest(".opt");
+  const s = STOPS[P1.i];
+  if(o && s.q && P1.ans[s.id]===undefined){ P1.ans[s.id] = +o.dataset.o; store.set("itp_p1",P1); renderStop(); return; }
+  if(e.target.closest("#next")){ go1(P1.i+1); window.scrollTo({top:0}); }
+  if(e.target.closest("#prev")){ go1(P1.i-1); window.scrollTo({top:0}); }
+  if(e.target.closest("#goP2")){ showPart(2); window.scrollTo({top:0}); }
+});
+
+/* ---------------- Part 2 ---------------- */
+const blankProblem = () => ({who:"", what:"", when:"", s:[3,3,3,3]});
+const blankSol = () => ({idea:"", d:3, f:3, v:3});
+const DEF = { step:0, problems:[blankProblem(),blankProblem(),blankProblem()], chosen:0,
+  hn:"7", hN:"10", hev:"", method:"", qs:["","",""],
+  sols:[blankSol(),blankSol(),blankSol()], chosenSol:0,
+  name:"", desc:"", cwho:"", cwhere:"", calt:"", benefit:"", diff:"", vision:"", mission:"",
+  pitch:"", checks:[false,false,false,false,false], visited:[0] };
+let S = Object.assign(structuredClone(DEF), store.get("itp_p2", {}));
+const save2 = () => store.set("itp_p2", S);
+
+const STEPS = ["Notice","Pick","Test","Solve","Shape","Pitch","Review"];
+const SCORE_LABELS = ["How often does it happen?","How frustrating is it?","How many people have it?","How easily can you reach them to interview?"];
+const DFV = [["d","Desirable","Does it solve the problem in a way people value?"],["f","Feasible","Could you make or deliver it with your resources, skills, and time?"],["v","Viable","Would people pay enough for it to be profitable?"]];
+const METHODS = [
+  ["interview","One-on-one interviews","In-depth, qualitative answers from a few people, with follow-up questions. Best first step for validating a problem."],
+  ["focus","Focus group","A small group discussion for detailed reactions and ideas. Watch that one loud voice doesn't steer the group."],
+  ["survey","Survey","A large amount of quantitative data from many people. Best once you know which questions to ask."],
+  ["observe","Observation","Watch real behavior in a natural setting, like the Curbside Cup team counting cars in the line."],
+  ["experiment","Experiment or A/B test","Measure how people actually behave, or compare two real alternatives side by side."]
+];
+
+const P = () => S.problems[S.chosen] || S.problems[0];
+const Sol = () => S.sols[S.chosenSol] || S.sols[0];
+const val = (v, ph) => v && v.trim() ? esc(v.trim()) : `<span class="blank">${ph}</span>`;
+const strip = s => (s||"").trim().replace(/[.!?]+$/,"");
+
+function problemStatement(){
+  const p=P(); return `${val(strip(p.who),"[who has the problem]")} ${p.what.trim()?"struggle with":"struggle with"} ${val(strip(p.what),"[the frustration]")} ${val(strip(p.when),"[when or where it happens]")}.`;
+}
+function hypothesis(){
+  const p=P();
+  return `I believe ${val(strip(p.who),"[who]")} experience ${val(strip(p.what),"[the problem]")}. I'll consider this validated if at least <b>${esc(S.hn||"?")}</b> of <b>${esc(S.hN||"?")}</b> people I talk to ${val(strip(S.hev),"[the evidence you'll look for]")}.`;
+}
+function valueProp(){
+  return `For ${val(strip(S.cwho)||strip(P().who),"[target customer]")} who ${val(strip(P().what),"[problem]")}, ${val(strip(S.name),"[business name]")} is ${val(strip(S.desc),"[what your product is]")} that ${val(strip(S.benefit),"[key benefit]")}. Unlike ${val(strip(S.calt),"[current alternative]")}, we ${val(strip(S.diff),"[what makes you different]")}.`;
+}
+function biasCheck(q){
+  q=(q||"").trim(); if(!q) return ["idle","Write a question"];
+  const l=q.toLowerCase();
+  if(/\b(wouldn'?t|don'?t|isn'?t|aren'?t|won'?t) you\b|\bdon'?t you (think|agree)|\bagree\b|\bisn'?t it\b/.test(l)) return ["no","Leading: it suggests the answer. Rephrase neutrally."];
+  if(/\b(love|hate|amazing|awesome|terrible|awful|great|best|worst)\b/.test(l)) return ["no","Loaded word: swap it for neutral phrasing."];
+  if(/^(would|will) you (buy|pay|use|try)/.test(l)) return ["no","Hypothetical buying questions overpromise. Ask about past behavior instead."];
+  if(/^(do|did|are|is|would|will|have|has|can|could|should) /.test(l)) return ["no","Yes/no question: try “Tell me about…” or “How do you…”"];
+  return ["ok","Neutral and open-ended ✓"];
+}
+
+function rangeField(key, label, v){
+  return `<label class="slider"><span class="l">${label}</span><input type="range" min="1" max="5" step="1" value="${v}" data-k="${key}" id="${key.replace(/\./g,'-')}"><output>${v}</output></label>`;
+}
+
+const STEP_VIEWS = [
+/* 0 Notice */ () => `
+  <div class="stop-head"><div class="chips"><span class="chip c-app">Warm-up</span></div><h2>Warm-up: Carrot Express</h2></div>
+  <div class="spark">
+    <video src="carrot.mp4" controls playsinline preload="metadata" aria-label="Short video: Carrot Express, from problem to business idea"></video>
+    <div style="display:flex;flex-direction:column;gap:10px">
+      <p class="lede">A carrot shortage, a hungry rabbit, and a business opportunity. Watch for the three moves you'll make in this builder.</p>
+      <div class="formula" style="grid-template-columns:minmax(0,1fr)">
+        <div><span class="k">1 · The problem</span>Rabbit interviews revealed a common frustration: running out of carrots between grocery trips.</div>
+        <div><span class="k">2 · The solution</span>A weekly carrot subscription delivered to your burrow, with your choice of quantity, carrots from local growers, and an emergency box when needed.</div>
+        <div><span class="k">3 · The business idea</span>Help busy rabbit households keep their kitchens stocked with fresh carrots through convenient, customizable deliveries.</div>
+      </div>
+    </div>
+  </div>
+  <details class="example"><summary><b>View the Carrot Express infographic</b></summary><img src="carrot-infographic.jpg" alt="Carrot Express infographic: 1. The problem, an empty fridge. 2. The solution, a weekly carrot subscription box. 3. The business idea, a fridge stocked with carrots. Your turn: What will you offer? Who will buy it? How will it solve their problem?" style="margin-top:10px;border-radius:8px" loading="lazy"></details>
+  <div class="callout"><b>Your turn:</b> What will you offer? Who will buy it? How will it solve their problem? The next steps walk you through each question, one move at a time. You gotta carrot a little about the details!</div>
+  <div class="stop-head" style="margin-top:8px"><div class="chips"><span class="chip c-cus">Customer</span><span class="chip">Unit 1 · Topic 1.4</span></div><h2>Notice: find problems worth solving</h2></div>
+  <p class="lede">The Curbside Cup idea began with a complaint someone made out loud. Good business ideas usually start this way. Scan your own life through these lenses and write down up to three real frustrations, either yours or ones you've watched other people deal with.</p>
+  <div class="lenses">
+    <div class="lens"><b>School day</b>Where do students, teachers, or parents waste time or get stuck?</div>
+    <div class="lens"><b>Home and family</b>What chore, errand, or routine does everyone complain about?</div>
+    <div class="lens"><b>Work or part-time job</b>What slows customers or coworkers down?</div>
+    <div class="lens"><b>Sports and hobbies</b>What gear, schedule, or cost problem keeps coming up?</div>
+    <div class="lens"><b>Community</b>What do local businesses, neighbors, or groups lack?</div>
+    <div class="lens"><b>Money and online life</b>Where do people overspend, get confused, or give up?</div>
+  </div>
+  <div class="example"><span class="k">Curbside Cup's version</span><b>Who:</b> parents waiting in the school pickup line · <b>What:</b> fundraiser fatigue and a detour for afternoon coffee · <b>When:</b> every school afternoon, during an 18-minute wait</div>
+  <div class="grid3">${S.problems.map((p,i)=>`
+    <div class="card"><h3 class="cardh">Problem ${i+1}</h3>
+      <div class="field"><label for="p${i}who">Who has the problem?</label><input type="text" id="p${i}who" data-k="problems.${i}.who" value="${esc(p.who)}" placeholder="e.g., student athletes"></div>
+      <div class="field"><label for="p${i}what">What frustrates them?</label><textarea id="p${i}what" data-k="problems.${i}.what" placeholder="e.g., forgetting or losing their water bottles">${esc(p.what)}</textarea></div>
+      <div class="field"><label for="p${i}when">When or where does it happen?</label><input type="text" id="p${i}when" data-k="problems.${i}.when" value="${esc(p.when)}" placeholder="e.g., at away games"></div>
+    </div>`).join("")}</div>`,
+
+/* 1 Pick */ () => {
+  const filled = S.problems.map((p,i)=>({p,i})).filter(o=>o.p.what.trim());
+  if(!filled.length) return `<div class="stop-head"><h2>Pick: choose the strongest problem</h2></div><div class="callout">Go back to <b>Notice</b> and describe at least one problem first.</div>`;
+  if(!S.problems[S.chosen].what.trim()) S.chosen = filled[0].i;
+  return `
+  <div class="stop-head"><div class="chips"><span class="chip c-cus">Customer</span></div><h2>Pick: choose the strongest problem</h2></div>
+  <p class="lede">Rate each problem from 1 (low) to 5 (high). Strong business problems happen often, really bother people, affect many people, and involve people you can actually talk to. Use the score as a guide, then choose.</p>
+  <div class="grid3">${filled.map(({p,i})=>{
+    const tot = p.s.reduce((a,b)=>a+b,0);
+    return `<div class="card ${S.chosen===i?'pick':''}" data-card="${i}"><h3 class="cardh">Problem ${i+1}</h3>
+      <p><b>${esc(p.who||"Someone")}</b>: ${esc(p.what)}${p.when?` <span class="muted">(${esc(p.when)})</span>`:""}</p>
+      ${SCORE_LABELS.map((l,j)=>rangeField(`problems.${i}.s.${j}`, l, p.s[j])).join("")}
+      <div class="score"><span>Problem score</span><b data-total="${i}">${tot} / 20</b></div>
+      <label class="choose"><input type="radio" name="chosen" value="${i}" data-k="chosen" ${S.chosen===i?'checked':''}> Choose this problem</label>
+    </div>`;}).join("")}</div>`;
+},
+
+/* 2 Test */ () => `
+  <div class="stop-head"><div class="chips"><span class="chip c-cus">Customer</span><span class="chip">Units 1–2 · Topics 1.4, 2.3</span></div><h2>Test: turn your problem into a hypothesis</h2></div>
+  <div class="preview"><span class="k">Your problem statement</span><span id="pv-ps">${problemStatement()}</span></div>
+  <div class="field"><span class="lab">Finish your hypothesis</span>
+    <div class="inline">I'll consider it validated if at least <input type="number" min="1" id="hn" data-k="hn" value="${esc(S.hn)}" aria-label="number of people"> of <input type="number" min="1" id="hN" data-k="hN" value="${esc(S.hN)}" aria-label="total people"> people I talk to
+    <input type="text" id="hev" data-k="hev" value="${esc(S.hev)}" placeholder="e.g., say this happens to them at least once a week"></div>
+    <span class="hint">Set your success number before you collect data, so the results can't be bent to fit what you hoped for.</span></div>
+  <div class="preview"><span class="k">Your business hypothesis</span><span id="pv-h">${hypothesis()}</span></div>
+  <div class="field"><span class="lab">Choose your first research method</span>
+  <div class="methods">${METHODS.map(([k,t,d])=>`<label class="method"><input type="radio" name="method" value="${k}" data-k="method" ${S.method===k?'checked':''}><b>${t}</b><span class="muted">${d}</span></label>`).join("")}</div></div>
+  <div class="field"><span class="lab">Draft three interview questions</span><span class="hint">Neutral, open-ended questions about past experience give honest data. The checker flags leading, loaded, and yes/no questions.</span></div>
+  <div class="grid3">${S.qs.map((q,i)=>{ const [c,m]=biasCheck(q); return `<div class="field"><label for="q${i}">Question ${i+1}</label><textarea id="q${i}" data-k="qs.${i}" placeholder="${["Tell me about the last time…","How do you currently handle…","What have you tried to fix…"][i]}">${esc(q)}</textarea><span class="bias ${c}" data-bias="${i}">${m}</span></div>`;}).join("")}</div>
+  <div class="callout"><b>Go do it.</b> This simulation can't run your interviews for you. Talk to real people, count the results, and come back. If your hypothesis fails, that's a finding too: Curbside Cup's first idea failed before it worked.</div>`,
+
+/* 3 Solve */ () => `
+  <div class="stop-head"><div class="chips"><span class="chip c-pro">Product (Good or Service)</span><span class="chip">Unit 1 · Topic 1.4</span></div><h2>Solve: “but what if…?”</h2></div>
+  <div class="preview"><span class="k">The problem you're solving</span>${problemStatement()}</div>
+  <p class="lede">Use the spark pattern from the video. Write three different solutions. Make at least one of them unusual. Then rate each one on desirability, feasibility, and viability.</p>
+  <div class="grid3">${S.sols.map((s,i)=>{ const tot=s.d+s.f+s.v; return `
+    <div class="card ${S.chosenSol===i?'pick':''}" data-scard="${i}"><h3 class="cardh">Solution ${i+1}</h3>
+      <div class="field"><label for="s${i}">But what if…</label><textarea id="s${i}" data-k="sols.${i}.idea" placeholder="${["…we delivered it to them?","…it were a subscription?","…we made it a service instead of a product?"][i]}">${esc(s.idea)}</textarea></div>
+      ${DFV.map(([k,l,d])=>rangeField(`sols.${i}.${k}`, `<b>${l}</b>: ${d}`, s[k])).join("")}
+      <div class="score"><span>D + F + V</span><b data-stotal="${i}">${tot} / 15</b></div>
+      <label class="choose"><input type="radio" name="chosenSol" value="${i}" data-k="chosenSol" ${S.chosenSol===i?'checked':''}> Choose this solution</label>
+    </div>`;}).join("")}</div>
+  <p class="small muted">CED 2.3.A.3: A product is <b>desirable</b> when it creates value for customers by achieving problem-solution fit; <b>feasible</b> when the business can produce it within its resources, technology, expertise, and time; and <b>viable</b> when it has the potential to be profitable in a market.</p>`,
+
+/* 4 Shape */ () => `
+  <div class="stop-head"><div class="chips"><span class="chip c-pro">Product</span><span class="chip c-cus">Customer</span><span class="chip c-org">Organization</span></div><h2>Shape: from solution to business idea</h2></div>
+  <div class="preview"><span class="k">Your chosen solution</span>${val(Sol().idea,"Go back to Solve and describe a solution.")}</div>
+  <div class="grid3">
+    <div class="field"><label for="name">Business name</label><input type="text" id="name" data-k="name" value="${esc(S.name)}" placeholder="e.g., Curbside Cup"><span class="hint">Later, test two names with real people, like the team's name poll.</span></div>
+    <div class="field"><label for="desc">What is your product? (a short noun phrase)</label><input type="text" id="desc" data-k="desc" value="${esc(S.desc)}" placeholder="e.g., an iced coffee delivery service in the pickup line"></div>
+    <div class="field"><label for="benefit">Key benefit to the customer</label><input type="text" id="benefit" data-k="benefit" value="${esc(S.benefit)}" placeholder="e.g., gets them coffee in under a minute with no detour"></div>
+  </div>
+  <h3>Target customer profile</h3>
+  <div class="grid3">
+    <div class="field"><label for="cwho">Who exactly? (age or life stage, habits)</label><textarea id="cwho" data-k="cwho" placeholder="e.g., working parents, 28–45, who pick up 3+ days a week">${esc(S.cwho)}</textarea></div>
+    <div class="field"><label for="cwhere">Where can you find and reach them?</label><textarea id="cwhere" data-k="cwhere" placeholder="e.g., the pickup line, PTO newsletter">${esc(S.cwhere)}</textarea></div>
+    <div class="field"><label for="calt">What do they use now instead?</label><textarea id="calt" data-k="calt" placeholder="e.g., the drive-thru 1.8 miles away">${esc(S.calt)}</textarea></div>
+  </div>
+  <div class="field"><label for="diff">What makes you better than that alternative?</label><input type="text" id="diff" data-k="diff" value="${esc(S.diff)}" placeholder="e.g., come to their car, cost less, and fund their school"></div>
+  <div class="preview"><span class="k">Your value proposition</span><span id="pv-vp">${valueProp()}</span></div>
+  <h3>Purpose</h3>
+  <div class="grid3">
+    <div class="field"><label for="vision">Vision statement</label><textarea id="vision" data-k="vision" placeholder="A world where…">${esc(S.vision)}</textarea><span class="hint">Core values and aspirations. Where do you hope this goes?</span></div>
+    <div class="field"><label for="mission">Mission statement</label><textarea id="mission" data-k="mission" placeholder="[Name] provides [product] to [customer] so that…">${esc(S.mission)}</textarea><span class="hint">What you do, for whom, and how, today.</span></div>
+  </div>`,
+
+/* 5 Pitch */ () => `
+  <div class="stop-head"><div class="chips"><span class="chip c-app">Appendix · Pitch</span><span class="chip">Unit 3</span></div><h2>Pitch: 200 words or less</h2></div>
+  <p class="lede">Use your Business Canvas Project work to write a 60-second elevator pitch. Start from an automatic draft built from your answers, then rewrite it in your own voice. The sample pitch was about 160 words.</p>
+  <div class="nav" style="justify-content:flex-start"><button type="button" class="btn gold" id="build">Build a starter draft</button><span id="confirmSlot"></span></div>
+  <div class="field"><label for="pitch">Your pitch</label><textarea id="pitch" data-k="pitch" style="min-height:220px" placeholder="Start with something that grabs attention…">${esc(S.pitch)}</textarea>
+  <div class="wc"><span id="pwc"></span><div class="meter" id="pmeterBox"><i id="pmeter"></i></div><span id="psec"></span></div></div>
+  <div class="field"><span class="lab">Self-check: does your pitch include…</span>
+  <div class="checks">${PITCH_KEYS.map(([c,l],i)=>`<label><input type="checkbox" id="chk${i}" data-k="checks.${i}" ${S.checks[i]?'checked':''}> <span><mark class="${c}" style="padding:0 4px;border-bottom:3px solid">${l}</mark></span></label>`).join("")}</div></div>`,
+
+/* 6 Review */ () => {
+  const p=P(), m=METHODS.find(x=>x[0]===S.method);
+  const li=(k,v)=>`<li><b>${k}:</b> ${v}</li>`;
+  const later = arr => `<ul class="later">${arr.map(a=>`<li>${a}</li>`).join("")}</ul>`;
+  const n = words(S.pitch);
+  return `
+  <div class="stop-head"><div class="chips"><span class="chip c-app">Unit 1 starter</span></div><h2>Review: your starter Business Canvas Project</h2></div>
+  <p class="lede">These are your Unit 1 drafts. Components marked ○ fill in later in the course, just as they did for Curbside Cup.</p>
+  <div class="tbl-wrap"><div class="full">
+    <section class="s-org"><h3>Organization<span>▥</span></h3><ul>${li("Business",val(S.name,"(no name yet)"))}${li("Vision",val(S.vision,"(draft in Shape)"))}${li("Mission",val(S.mission,"(draft in Shape)"))}</ul>${later(["Skills assessment (Unit 4)","Strategic decision using PACED (Unit 4)"])}</section>
+    <section class="s-ops"><h3>Operations<span>⛓</span></h3>${later(["Supply chain plan and production process (Unit 1)","Marketing channel(s) (Unit 2)","KPIs (Unit 4)"])}</section>
+    <section class="s-cus"><h3>Customer<span>◯</span></h3><ul>${li("Problem*",problemStatement())}${li("Hypothesis",hypothesis())}${li("Method",m?m[1]:'<span class="blank">(choose in Test)</span>')}${li("Target customer",val(S.cwho,"(draft in Shape)"))}</ul>${later(["Research findings, relationships, marketing campaign (Unit 2)","KPIs (Unit 4)"])}</section>
+    <section class="s-pro"><h3>Product<span>✦</span></h3><ul>${li("Product idea*",val(Sol().idea,"(choose in Solve)"))}${li("Value proposition",valueProp())}</ul>${later(["MVP, branding (Unit 2)"])}</section>
+    <section class="s-mkt"><h3>Market<span>⛟</span></h3><ul>${li("Current alternative",val(S.calt,"(draft in Shape)"))}${li("Our edge",val(S.diff,"(draft in Shape)"))}</ul>${later(["PESTEL, competitive advantage plan (Unit 1)","Competitive landscape (Unit 2)","SWOT/Porter's, KPIs (Unit 4)"])}</section>
+    <section class="s-fin"><h3>Finance/Accounting<span>$</span></h3>${later(["Price and pricing strategy (Unit 2)","Startup costs, capital, revenue projection, income statement (Unit 3)","KPIs (Unit 4)"])}</section>
+  </div></div>
+  <div class="dv"><div class="dv-t"><b>Appendix · Pitch</b><span class="mono small ${n>200?'pivot':'muted'}">${n} / 200 words</span></div><p class="pitch">${S.pitch.trim()?esc(S.pitch).replace(/\n/g,"<br>"):'<span class="blank">(write it in Pitch)</span>'}</p></div>
+  <div class="field"><label for="exportBox">Copy your work into a document or your Business Canvas Project template</label><textarea class="copybox" id="exportBox" readonly>${esc(exportText())}</textarea></div>
+  <div class="nav" style="justify-content:flex-start"><button type="button" class="btn primary" id="copy">Copy all</button><button type="button" class="btn" id="reset">Start over</button><span id="resetSlot"></span></div>
+  <div class="endcard"><div><h3>Next move: test it.</h3><p>Take your three interview questions to at least ${esc(S.hN||"10")} real people. Record the results as evidence in the Customer component.</p></div></div>`;
+}
+];
+
+function plain(html){ const d=document.createElement("div"); d.innerHTML=html; return d.textContent; }
+function exportText(){
+  const m=METHODS.find(x=>x[0]===S.method);
+  return [
+    `BUSINESS CANVAS PROJECT · UNIT 1 STARTER`,
+    `Business: ${S.name||"(no name yet)"}`, ``,
+    `ORGANIZATION`, `Vision: ${S.vision}`, `Mission: ${S.mission}`, ``,
+    `CUSTOMER`, `Problem statement: ${plain(problemStatement())}`, `Hypothesis: ${plain(hypothesis())}`, `Research method: ${m?m[1]:""}`,
+    `Interview questions:`, ...S.qs.filter(q=>q.trim()).map((q,i)=>`  ${i+1}. ${q.trim()}`),
+    `Target customer: ${S.cwho}`, `Where to reach them: ${S.cwhere}`, ``,
+    `PRODUCT`, `Product idea: ${Sol().idea}`, `Value proposition: ${plain(valueProp())}`, ``,
+    `MARKET`, `Current alternative: ${S.calt}`, `Our edge: ${S.diff}`, ``,
+    `APPENDIX · PITCH (${words(S.pitch)} words)`, S.pitch.trim()
+  ].join("\n");
+}
+function starterPitch(){
+  const p=P(), s=Sol();
+  const who = strip(S.cwho)||strip(p.who)||"[customer]";
+  return [
+    `Picture this: ${strip(p.who)||"[who]"} ${strip(p.when)?strip(p.when)+", ":""}dealing with ${strip(p.what)||"[the problem]"}.`,
+    `We tested it: at least ${S.hn||"[n]"} of the ${S.hN||"[N]"} people we talked to ${strip(S.hev)||"[your evidence]"}.`,
+    `${strip(S.name)||"[Name]"} is ${strip(S.desc)||"[your product]"}. ${strip(s.idea)?strip(s.idea).replace(/^…|^\.\.\./,"").replace(/^./,c=>c.toUpperCase())+".":""}`,
+    `We built it for ${who}.`,
+    `Unlike ${strip(S.calt)||"[the current alternative]"}, we ${strip(S.diff)||"[what makes you better]"}, so it ${strip(S.benefit)||"[key benefit]"}.`,
+    `${strip(S.name)||"[Name]"}: [your closing line].`
+  ].join(" ");
+}
+
+function renderRail2(){
+  $("#rail2").innerHTML = STEPS.map((t,i)=>`<button type="button" data-s="${i}" class="${i===S.step?'cur':''} ${S.visited.includes(i)&&i!==S.step?'done':''}" aria-current="${i===S.step?'step':'false'}"><span class="k">Step ${i+1}</span>${t}</button>`).join("");
+}
+function renderStep(){
+  const html = STEP_VIEWS[S.step]() + `<div class="nav"><button type="button" class="btn" id="sprev" ${S.step===0?'disabled':''}>← Back</button>${S.step<STEPS.length-1?`<button type="button" class="btn primary" id="snext">Next: ${STEPS[S.step+1]} →</button>`:""}</div>`;
+  $("#step").innerHTML = html;
+  if(S.step===5) updatePitchMeter();
+}
+function go2(i){
+  S.step=Math.max(0,Math.min(STEPS.length-1,i));
+  if(!S.visited.includes(S.step)) S.visited.push(S.step);
+  save2(); renderRail2(); renderStep();
+}
+function setPath(path, v){
+  const ks=path.split("."); let o=S;
+  for(let i=0;i<ks.length-1;i++) o=o[ks[i]];
+  const last=ks[ks.length-1];
+  o[last] = (typeof o[last]==="number" && v!=="" && !isNaN(+v)) ? +v : v;
+}
+function updatePitchMeter(){
+  const n=words(S.pitch);
+  $("#pwc").textContent = n+" / 200 words";
+  $("#pmeter").style.width = Math.min(100,n/2)+"%";
+  $("#pmeterBox").classList.toggle("over", n>200);
+  $("#psec").textContent = n>200 ? `${n-200} over the limit` : `≈ ${Math.round(n/150*60)} sec aloud`;
+}
+function updateDerived(t){
+  const k=t.dataset.k;
+  if(t.type==="range"){ t.nextElementSibling.textContent=t.value; }
+  if(S.step===1 && k.startsWith("problems.")){ const i=+k.split(".")[1]; const el=document.querySelector(`[data-total="${i}"]`); if(el) el.textContent=S.problems[i].s.reduce((a,b)=>a+b,0)+" / 20"; }
+  if(S.step===1 && k==="chosen"){ document.querySelectorAll("[data-card]").forEach(c=>c.classList.toggle("pick", +c.dataset.card===S.chosen)); }
+  if(S.step===3 && k.startsWith("sols.")){ const i=+k.split(".")[1]; const el=document.querySelector(`[data-stotal="${i}"]`); const s=S.sols[i]; if(el) el.textContent=(s.d+s.f+s.v)+" / 15"; }
+  if(S.step===3 && k==="chosenSol"){ document.querySelectorAll("[data-scard]").forEach(c=>c.classList.toggle("pick", +c.dataset.scard===S.chosenSol)); }
+  if(S.step===2){ $("#pv-h").innerHTML=hypothesis(); if(k.startsWith("qs.")){ const i=+k.split(".")[1]; const [c,m]=biasCheck(S.qs[i]); const b=document.querySelector(`[data-bias="${i}"]`); b.className="bias "+c; b.textContent=m; } }
+  if(S.step===4){ $("#pv-vp").innerHTML=valueProp(); }
+  if(S.step===5 && k==="pitch") updatePitchMeter();
+}
+$("#step").addEventListener("input", e=>{
+  const t=e.target; if(!t.dataset.k) return;
+  if(t.type==="checkbox") setPath(t.dataset.k, t.checked);
+  else if(t.type==="radio") setPath(t.dataset.k, t.value);
+  else setPath(t.dataset.k, t.value);
+  save2(); updateDerived(t);
+});
+$("#step").addEventListener("change", e=>{ const t=e.target; if(t.type==="radio"&&t.dataset.k){ setPath(t.dataset.k, t.value); save2(); updateDerived(t);} });
+$("#step").addEventListener("click", async e=>{
+  if(e.target.closest("#snext")){ go2(S.step+1); window.scrollTo({top:0}); }
+  if(e.target.closest("#sprev")){ go2(S.step-1); window.scrollTo({top:0}); }
+  if(e.target.closest("#build")){
+    if(S.pitch.trim()){
+      $("#confirmSlot").innerHTML = `<span class="confirm">Replace your current draft? <button type="button" class="btn" id="yesBuild">Replace</button><button type="button" class="btn" id="noBuild">Keep mine</button></span>`;
+    } else { S.pitch=starterPitch(); save2(); renderStep(); toast("Starter draft added. Now rewrite it in your own words."); }
+  }
+  if(e.target.closest("#yesBuild")){ S.pitch=starterPitch(); save2(); renderStep(); toast("Draft replaced"); }
+  if(e.target.closest("#noBuild")){ $("#confirmSlot").innerHTML=""; }
+  if(e.target.closest("#copy")){
+    const txt=exportText();
+    try{ await navigator.clipboard.writeText(txt); toast("Copied to clipboard"); }
+    catch(err){ const b=$("#exportBox"); b.focus(); b.select(); toast("Text selected. Press Ctrl+C or ⌘C to copy."); }
+  }
+  if(e.target.closest("#reset")){
+    $("#resetSlot").innerHTML = `<span class="confirm">Erase all of your Part 2 answers? <button type="button" class="btn" id="yesReset">Erase</button><button type="button" class="btn" id="noReset">Cancel</button></span>`;
+  }
+  if(e.target.closest("#yesReset")){ S=structuredClone(DEF); save2(); go2(0); toast("Started over"); }
+  if(e.target.closest("#noReset")){ $("#resetSlot").innerHTML=""; }
+});
+$("#rail2").addEventListener("click", e=>{ const b=e.target.closest("button[data-s]"); if(b) go2(+b.dataset.s); });
+
+/* ---------------- tabs ---------------- */
+function showPart(n){
+  $("#part1").hidden = n!==1; $("#part2").hidden = n!==2;
+  $("#tab1").setAttribute("aria-selected", n===1); $("#tab2").setAttribute("aria-selected", n===2);
+  store.set("itp_part", n);
+  if(n===2){ renderRail2(); renderStep(); }
+}
+document.querySelectorAll(".tab").forEach(b=>b.addEventListener("click",()=>showPart(+b.dataset.part)));
+
+/* ---------------- boot ---------------- */
+go1(P1.i||0);
+const startHash = (location.hash||"").replace("#","");
+showPart(startHash==="build" ? 2 : startHash==="sample" ? 1 : store.get("itp_part",1));
+window.addEventListener("hashchange", ()=>{ const h=(location.hash||"").replace("#",""); if(h==="build") showPart(2); else if(h==="sample") showPart(1); });
+</script>
+</body>
+</html>
